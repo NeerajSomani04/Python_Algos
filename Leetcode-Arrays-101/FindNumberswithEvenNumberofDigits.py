@@ -9,5 +9,6 @@ class Solution:
         
 '''
 Big-O efficiency:-
-# time complexity - O(n^2) because of O(n) for "for loop" and another O(n) for len function with-in for loop 
-# space complexity - O(1)
+  - time complexity - O(n^2) because of O(n) for "for loop" and another O(n) for len function with-in for loop 
+  - space complexity - O(1)
+'''

@@ -9,7 +9,9 @@ Data -
   - assumptions - 
   
 Pseudo code - 
-  - read array
+  - read array and count number of zero's that needs to be duplicated.
+    - here, edge case, would be, don't duplicate zero's that are coming at the boundry of the array
+  - read the array in reverse order and copy zero twice and non-zero once
 '''
 
 # Actual Code 
@@ -38,3 +40,25 @@ class Solution:
 # space complexity - O(1) --> no extra space needed.
 
 # Solution 2 -
+class Solution:
+    def duplicateZeros(self, arr: List[int]) -> None:
+        zeroes = arr.count(0)
+        n = len(arr)
+        for i in range(n-1, -1, -1):
+            ## this below line is moving each non-zero element to the non-empty space towards end of an array
+            if i + zeroes < n:
+                arr[i + zeroes] = arr[i]
+            ## if we hit any zero, we need to duplicate its value (or copy it twice)
+            if arr[i] == 0: 
+                zeroes -= 1
+                if i + zeroes < n:
+                    arr[i + zeroes] = 0
+
+                    
+## Big-O efficiency -
+# time complexity - O(n) --> because of count function O(n) ,  then because of for loop O(n)
+# space complexity - O(1) --> no extra memory used
+
+
+# space complexity - O(1) --> no additional memory used.
+

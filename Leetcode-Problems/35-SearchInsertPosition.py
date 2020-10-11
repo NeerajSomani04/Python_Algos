@@ -59,5 +59,5 @@ class Solution:
 
 ''' Big-O Efficiency:
 # time complexity - O(log n) because of BSA
-# space complexity - O(1) -- no extra memory needed other than for few variables
+# space complexity - O(1) -- no extra memory needed other than for few variables, in-other words, our space doesn't scale with the size of our input.
 '''

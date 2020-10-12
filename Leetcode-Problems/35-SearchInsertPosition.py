@@ -55,7 +55,20 @@ class Solution:
 
 # best possible solution --
 ## Solution 2 -
-
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        lo = 0
+        hi = len(nums) - 1
+        while lo <= hi :
+            mid = (lo + hi) // 2
+            mid_value = nums[mid]
+            if mid_value == target:
+                return mid
+            elif mid_value > target:
+                hi = mid - 1
+            else:
+                lo = mid + 1
+        return lo
 
 ''' Big-O Efficiency:
 # time complexity - O(log n) because of BSA

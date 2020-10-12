@@ -1,16 +1,24 @@
 # Lets follow our procedure to solve this question:
 '''
-Definition - can be understood from question
+Definition - can be understood from question (https://leetcode.com/explore/learn/card/fun-with-arrays/527/searching-for-items-in-an-array/3251/)
+
+
 Data - 
-  - Input - a fixed length array that contains some intergers
-  - output - function should modify the array in-place, should not return anything
-  - Edge case - no zero at all in the array, at-least 1 element will be in array, zero could be last element in the array, or a zero present on the boundary of the leftover elements.
+  - Input - an array that contains some intergers
+  - output - return true if it satisfies all condition of mountain array, else return False
+      -- Recall that A is a mountain array if and only if:
+            - A.length >= 3
+            - There exists some i with 0 < i < A.length - 1 such that:
+              - A[0] < A[1] < ... A[i-1] < A[i]
+              - A[i] > A[i+1] > ... > A[A.length - 1]
+  - Edge case - array can be empty or less than 3 elements in array, 
+              - multiple entries of max element, which makes array invalid for Mountain Array
+              - max element could be last or first element in array
   - assumptions - 
   
 Pseudo code - 
-  - read array and count number of zero's that needs to be duplicated.
-    - here, edge case, would be, don't duplicate zero's that are coming at the boundry of the array
-  - read the array in reverse order and copy zero twice and non-zero once
+  - first check length of array, if less than 3, return False
+  - 
 '''
 
 # Actual Code 

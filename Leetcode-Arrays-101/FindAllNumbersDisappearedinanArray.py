@@ -17,9 +17,30 @@ Pseudo code -
 # Actual Code 
 
 '''
-# Solution 1 -
+# NOTES for myself -
 Not able to solve it by myself. After understanding other Solutions from Discussion, I realized a very critical point of this question:-
   -- any element inside the array can't be greater than the size of array, meaning:
   -- this example is not valid array for this question :- [1, 2, 7], because 'n'=3, (n = size of array), and 7 can't be a part of this array for this question.
-  -- Now, I can think about the solution provided in discussion
-  '''
+  -- Also, some elements appear twice and others appear once, meaning non element can appear more than two times.
+  -- Now, I can think and better understand about the solution provided in discussion
+'''
+
+# Solution 1 -
+class Solution:
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        for i in range(len(nums)):
+            temp = abs(nums[i]) - 1
+            if nums[temp] > 0:
+                nums[temp] *= -1
+        
+        res = []
+        for i,n in enumerate(nums):
+            if n > 0:
+                res.append(i+1)
+        
+        return res
+
+''' Big-O efficiency -
+# time complexity - O(n) - because of for loop
+# space complexity - O(1) 
+'''

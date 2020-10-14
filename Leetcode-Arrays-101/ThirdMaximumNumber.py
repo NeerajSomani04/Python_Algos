@@ -53,3 +53,8 @@ class Solution(object):
 # time complexity - O(n) - because of for loop
 # space complexity - O(1)
 '''
+
+## Note -- 
+# As stated, float('inf') is used for setting a variable with an infinitely large value. In simple words, it sets the value as +ve infinty.
+# float('-inf') , it sets the value as -ve infinty.
+

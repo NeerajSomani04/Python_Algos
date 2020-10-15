@@ -58,6 +58,7 @@ Memory Usage: 14.1 MB, less than 99.98% of Python3 online submissions for Rotate
 
 
 # More notes -
+'''
 /*
  * clockwise rotate
  * first swap the symmetry (i.e. transpose the matrix), then reverse each row
@@ -68,3 +69,4 @@ Memory Usage: 14.1 MB, less than 99.98% of Python3 online submissions for Rotate
  * anti-clockwise rotate
  * first swap the symmetry (i.e. transpose the matrix), then reverse each col
 */
+'''

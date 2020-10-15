@@ -35,15 +35,23 @@ class Solution:
         """
         start = 0
         end = len(matrix)-1
-        for i in range(len(matrix)):
-            if start == end:
-                break
-            else:
-                matrix[start], matrix[end] = matrix[end], matrix[start]
-                start += 1
-                end -= 1
-            
+        for i in range(len(matrix)//2):
+            matrix[start], matrix[end] = matrix[end], matrix[start]
+            start += 1
+            end -= 1
+        
+        #print(matrix)
         # above can be done using "matrix.reverse()"
+        
         for i in range(len(matrix)):
             for j in range(i):
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+                
+''' Big-O efficiency 
+- Time complexity - O(n) - here n is size of matrix, where maxtrix is of nXn form
+- space complexity - O(1) 
+-- As per leetcode - this solution analytics
+Runtime: 28 ms, faster than 95.87% of Python3 online submissions for Rotate Image.
+Memory Usage: 14.1 MB, less than 99.98% of Python3 online submissions for Rotate Image.
+'''

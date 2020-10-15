@@ -39,3 +39,19 @@ class Solution:
 # time complexity - O(n*n) - because of two for loops
 # space complexity - O(1)
 '''
+
+# Solution 2 - Best possible solution -
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        table = {}
+        for i in range(len(nums)):
+            counter_part = target - nums[i]
+            if counter_part in table:
+                return [table[counter_part],i]
+            else:
+                table[nums[i]] = i
+
+''' Big-O efficiency 
+# time complexity - O(n) - because of for loop
+# space complexity - O(1) 
+'''

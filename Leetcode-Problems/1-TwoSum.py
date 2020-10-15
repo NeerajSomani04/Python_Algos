@@ -1,5 +1,4 @@
 
-
 # In this we are going to solve leetcode #387 problem
 # https://leetcode.com/problems/two-sum/
 
@@ -53,5 +52,9 @@ class Solution:
 
 ''' Big-O efficiency 
 # time complexity - O(n) - because of for loop
-# space complexity - O(1) 
+# space complexity - O(n) - because of hash table
 '''
+
+## This is the best example of trade-off between space and time complexity
+# Solution 1 needs more time but less space
+# Solution 2 needs more space but less time

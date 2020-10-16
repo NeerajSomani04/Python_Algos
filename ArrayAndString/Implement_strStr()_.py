@@ -28,6 +28,10 @@ class Solution:
         return -1
 
 ''' Big-O efficiency 
-# time complexity - O(n) - because of for loop
+# time complexity - O(n * h) - because of for loop and
+   - When you slice the string like haystack here for example, you're creating a copy of the string. Sure it's only the size of needle, but just wanted to point out. The string comparison is O(n) where n is size of needle so solution is O(n * h) at best where h is size of haystack.
 # space complexity - O(1)
 '''
+
+
+## Need to understand "KMP" algorithm to solve this problem by O(n) time complexity. YouTube it easily.

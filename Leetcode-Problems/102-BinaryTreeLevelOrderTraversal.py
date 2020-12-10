@@ -29,5 +29,37 @@ while the queue is not empty
 '''
 
 
+class TreeNode:
+  def __init__(self, val):
+    self.val = val
+    self.left = None
+    self.right = None
+
+class Solution:
+  def levelOrder(self, root):
+    levels = []
+    queue = [root]
+    while queue:
+      level = []
+      size = len(queue)
+      while size != 0 :
+        item = queue.pop(0)
+        level.append(item)
+        if item.left != None: 
+          queue.append(item.left)
+        if item.right != None: 
+          queue.append(item.right)
+        size -= 0
+      levels.append(level)
+     return levels
+
+'''
+space complexity --> O(1) --> considering output levels array will always be there in any kind of solution, and level and queue will never go to n level and will always be comparativly small.
+
+time complexity --> O(n) --> because of upper while loop, inner while loop in only 'k' times which is maximum number of node at any given level.
+
+'''
+
+
 
 

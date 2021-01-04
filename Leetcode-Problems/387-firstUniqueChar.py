@@ -45,7 +45,7 @@ def first_unique_char(s):
     
 # Solution 2:
 def first_unique_char(s):
-  for i, char in s:
+  for i, char in enumerate(s):
     if s.index(char) == s.rindex(char):
       return i
   

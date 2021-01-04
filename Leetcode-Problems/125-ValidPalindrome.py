@@ -29,7 +29,7 @@
 ## Solution 1:
 
 def isPalindrome(s):
-  return ''.join(reverse(s)) == s
+  return ''.join(reversed(s)) == s
 
 ## Big-O 
 # time complexity --> O(n) + O(n) ==> O(2n) ==> O(n)

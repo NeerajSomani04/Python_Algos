@@ -39,7 +39,7 @@ def first_unique_char(s):
 
 ## Big-O efficiency --
 # Time complexity : O(n) + O(n) ==> O(2n) ==> O(n) ----> this is linear time
-# space complexity: O(26) ==> O(1)
+# space complexity: O(26) ==> O(1) --> because 26 lowercase letters/alphabets.
     # this is tricky, you might be thinking hash table will store n char of array into hash table, but in reality its not true, at max you can have only 26 char in hash table.
 
     
@@ -57,9 +57,30 @@ def first_unique_char(s):
 # space complexity: O(1) 
     # as we are not using any data structure to store data.
         
-
 ## Summary -- Solution 2 is less efficient than Solution 1.
 
 ## question for Aaron:- why is he referring to 32 charachter, while calculating space complexity. We need to consider only 26 alphabets. Am I missing anything.
- 
 
+## Solution 3:
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        import string
+        index = []
+        letters  = string.ascii_lowercase # similar to letters='abcdefghijklmnopqrstuvwxyz'
+        for i in letters:
+            if s.count(i) == 1:
+                index.append(s.index(i))
+        if len(index) > 0:
+            return min(index)
+        else:
+            return -1
+
+## Big-O efficiency -- 
+# Time complexity : O(26) * O(n) ==> O(n) ---> this is linear time
+    # each count operation inside a for loop is of O(n) time complexity and for loop itself is O(26) time complexity
+# space complexity: O(n) 
+    # in worst case all index will be stored.
+  
+  
+
+ 

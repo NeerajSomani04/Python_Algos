@@ -6,7 +6,7 @@
 # Definition, Data, Pseudo code, Actual code, Big-O efficiency
 
 ## Definition -- Can be easily understood from leetcode problem statement
-
+'''
 ## Data (IOEA) -- Input, Output, Edge Cases, Assumptions
   # Input -- Given an array of integers nums and an integer target
   # Output -- return indices of the two numbers such that they add up to target
@@ -18,7 +18,7 @@
       -109 <= nums[i] <= 109
       -109 <= target <= 109
       Only one valid answer exists.
-
+'''
 
 ''' Pseudo code  --
       compare original string with reverse of it 

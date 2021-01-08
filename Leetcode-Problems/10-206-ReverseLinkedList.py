@@ -1,4 +1,4 @@
-Reverse a singly linked list.
+## Reverse a singly linked list.
 
 # In this we are going to solve leetcode problem #206
 # https://leetcode.com/problems/reverse-linked-list/
@@ -27,3 +27,35 @@ Pseudo code  --
 
 # Actual code --
 ## Solution 1:
+
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+      prev = None
+        curr = head
+        while curr:    
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        return prev
+ 
+## Big-O notation -->
+# time complexity --> O(n) --> because of while loop
+# space complexity --> O(1) --> only 3 variables used
+
+## Solution 2:
+class Solution:
+    def reverseList(self, head: ListNode, prev = None) -> ListNode:   
+        if head is None:
+            return prev
+        temp = head.next
+        head.next = prev
+        return self.reverseList(temp, head)
+
+## Big-O notation -->
+# time complexity --> O(n) --> because of recursive calls, that we do for each node
+# space complexity --> O(1) --> although, there is some space that stacks are going to take but garbage collector will through them as we don't need those stack for our calculation. This is because of tail recursive call.
+
+
+
+        

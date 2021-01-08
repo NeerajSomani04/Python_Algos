@@ -5,7 +5,7 @@
 # Definition, Data, Pseudo code, Actual code, Big-O efficiency
 
 ## Definition -- Can be easily understood from leetcode problem statement
-
+'''
 ## Data (IOEA) -- Input, Output, Edge Cases, Assumptions
   # Input -- an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0?
   # Output -- Find all unique triplets in the array which gives the sum of zero.
@@ -14,7 +14,7 @@
     Constraints:
         0 <= nums.length <= 3000
         -105 <= nums[i] <= 105
-
+'''
 
 ''' Pseudo code  --
       - sort the array

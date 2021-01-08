@@ -103,3 +103,8 @@ def removeNthFromEnd(self, head, n):
 # time complexity --> O(n) --> O(n) because of 2 while loop, means only one traversal
 # space complexity --> O(1) --> 
 
+## This link  has recusrive solution to same problem.
+
+# https://leetcode.com/problems/remove-nth-node-from-end-of-list/discuss/8802/3-short-Python-solutions
+  
+  

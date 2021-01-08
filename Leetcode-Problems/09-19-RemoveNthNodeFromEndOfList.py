@@ -62,7 +62,9 @@ class Solution:
       
       
  ## Aaron has calculated the length in a wrong way but conceptually, explaination is good.
-
+# Big-O notation -->
+# time complexity --> O(n) --> O(n) + O(n) because of 2 while loop, means 2 traversal
+# space complexity --> O(1) --> 
 
 ## Solution 2 : Solving the same problem in one traversal:
 class Solution:
@@ -79,3 +81,7 @@ class Solution:
         return head
       
  
+# Big-O notation -->
+# time complexity --> O(n) --> O(n) because of 2 while loop, means only one traversal
+# space complexity --> O(1) --> 
+

@@ -85,3 +85,21 @@ class Solution:
 # time complexity --> O(n) --> O(n) because of 2 while loop, means only one traversal
 # space complexity --> O(1) --> 
 
+## Solution 3: dummy node is created to handle edge case of having only head node in function
+
+def removeNthFromEnd(self, head, n):
+    dummy = ListNode(0)
+    dummy.next = head
+    fast = slow = dummy
+    for _ in xrange(n):
+        fast = fast.next
+    while fast and fast.next:
+        fast = fast.next
+        slow = slow.next
+    slow.next = slow.next.next
+    return dummy.next
+  
+ # Big-O notation -->
+# time complexity --> O(n) --> O(n) because of 2 while loop, means only one traversal
+# space complexity --> O(1) --> 
+

@@ -71,10 +71,29 @@ class Solution:
             if slow == fast:
                 return True
         return False
-
+'''
 ## Big-O notation -->
 # time complexity --> O(n) --> but keep few things in mind
       -- if we have a cycle, time complexity would be O(n) + O(k), because fast node iterating to cycle more than n nodes, but overall it will be O(n)
       -- if we don't have a cycle, time complexity would be O(n/2) because fast node will end of list sooner, but overall it will be O(n)
       -- its good to discribe this in interview, so that interviewer know that you have some background knowledge
-## space complexity --> O(1) --> as we not using any extra space other few variables
+## space complexity --> O(1) --> as we not using any extra space other than few variables
+'''
+
+## Solution 3:-- another faster approach
+def hasCycle(self, head):
+    try:
+        slow = head
+        fast = head.next
+        while slow is not fast:
+            slow = slow.next
+            fast = fast.next.next
+        return True
+    except:
+        return False
+
+'''
+## Big-O notation -->
+# time complexity --> O(n) --> but overall time distribution is lesser than as we are using exception handling method
+## space complexity --> O(1) --> as we are not using any extra space other than few variables
+'''

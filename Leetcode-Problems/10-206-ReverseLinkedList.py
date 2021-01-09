@@ -43,7 +43,7 @@ class Solution:
 # time complexity --> O(n) --> because of while loop
 # space complexity --> O(1) --> only 3 variables used
 
-## Solution 2:
+## Solution 2: this is tail recursion
 class Solution:
     def reverseList(self, head: ListNode, prev = None) -> ListNode:   
         if head is None:
@@ -57,5 +57,19 @@ class Solution:
 # space complexity --> O(1) --> although, there is some space that stacks are going to take but garbage collector will through them as we don't need those stack for our calculation. This is because of tail recursive call.
 
 
+## Solution 3: Normal Recursion
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        if not head or not head.next:
+            return head
+        node = self.reverseList(head.next)
+        head.next.next = head
+        head.next = None
+        return node
+
+## Big-O notation -->
+# time complexity --> O(n) --> because of recursive calls, that we do for each node
+# space complexity --> O(1) --> although, there is some space that stacks
+    
 
         

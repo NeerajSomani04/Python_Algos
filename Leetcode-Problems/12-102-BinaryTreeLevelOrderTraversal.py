@@ -1,4 +1,4 @@
-# In this we are going to solve leetcode #387 problem
+# In this we are going to solve leetcode #102 problem
 # https://leetcode.com/problems/binary-tree-level-order-traversal/
 
 # we are going to follow a specific process (D, D, P, A, B)
@@ -9,9 +9,9 @@
 # This concept is also known as Breadth first search (BFS)
 
 ## Data (IOEA) -- Input, Output, Edge Cases, Assumptions
-  # Input -- an array contains binary tree nodes
-  # Output -- return an array of array that contain nodes on each level in seperate array
-  # Egde Cases -- "None" as root node or even at any level on any node
+  # Input -- a node, representing root of a Binary tree
+  # Output -- return an array of array of numbers, where each sub-array representing one level (meaning sub-array contains nodes on each level in seperate array)
+  # Egde Cases -- "None" as root node or Null as input
   # Assumptions -- if root is "None", return an empty array []
   
 
@@ -21,7 +21,7 @@
 
 ''' Psudo code:-
 while the queue is not empty
---> set the bookmark
+--> set the bookmark, which is size of queue at every level
 --> while bookmark > 0
     --> pull node from queue
     --> save value into level array
@@ -44,7 +44,7 @@ class Solution:
       size = len(queue)
       while size != 0 :
         item = queue.pop(0)
-        level.append(item)
+        level.append(item.val)
         if item.left != None: 
           queue.append(item.left)
         if item.right != None: 
@@ -55,10 +55,10 @@ class Solution:
 
 '''
 space complexity --> O(1) --> considering output levels array will always be there in any kind of solution, and level and queue will never go to n level and will always be comparativly small.
-
+  -- also, it could be O(n) --> if we consider output array space in this calculation, the O(n+k), where n is number of nodes and k is maxinum size of queue.
 time complexity --> O(n) --> because of upper while loop, inner while loop in only 'k' times which is maximum number of node at any given level.
-
 '''
+
 
 
 

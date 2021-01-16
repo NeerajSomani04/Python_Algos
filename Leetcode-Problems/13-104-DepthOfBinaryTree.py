@@ -46,6 +46,8 @@ time complexity --> O(n) --> we look every node once
     --> to be more specific for explaining, O(n + 2k), where n is total number of nodes in tree and k is number of leaf nodes for which we check left and right null value nodes as well, hence "2k". But at the its comes down to O(n).
     
 space complexity --> O(k) --> where k is height of tree, because at any given time stack will hold only nodes at any given height.
+Runtime: 40 ms
+Memory Usage: 16.2 MB
 '''
 
 
@@ -73,6 +75,8 @@ time complexity --> O(n) --> we look every node once
     --> to be more specific for explaining, O(n + 2k), where n is total number of nodes in tree and k is number of leaf nodes for which we check left and right null value nodes as well, hence "2k". But at the its comes down to O(n).
     
 space complexity --> O(k) --> at any given time, maximum items in queue will be items at any given level
+Runtime: 44 ms
+Memory Usage: 15.4 MB
 '''
 
 ## important thing to understand -->

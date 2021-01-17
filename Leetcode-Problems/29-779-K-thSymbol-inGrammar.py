@@ -38,3 +38,9 @@ class Solution:
         print(first)
         return first[K-1]
 
+'''
+
+Leetcode statistics -- 
+Runtime: 72 ms
+Memory Usage: 14.3 MB
+'''

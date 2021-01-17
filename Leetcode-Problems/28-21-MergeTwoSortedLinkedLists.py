@@ -5,7 +5,7 @@
 # Definition, Data, Pseudo code, Actual code, Big-O efficiency
 
 ## Definition -- Can be easily understood from leetcode problem statement
-
+'''
 ## Data (IOEA) -- Input, Output, Edge Cases, Assumptions
   # Input -- two linked list L1 and L2
   # Output -- return head of newly merged sorted list 
@@ -15,7 +15,7 @@
         The number of nodes in both lists is in the range [0, 50].
         -100 <= Node.val <= 100
         Both l1 and l2 are sorted in non-decreasing order.
-
+'''
 
 ''' Pseudo code  --
       we need to look at each charachter (LOOP)

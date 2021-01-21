@@ -16,7 +16,7 @@
 '''
 
 # Actual code --
-# Solution 1: iteratively
+# Solution 1: iteratively, using a flag to indicate whether the node has been visited or not.
 
 def postorderTraversal(self, root: TreeNode) -> List[int]:
         ans = []        
@@ -35,4 +35,51 @@ def postorderTraversal(self, root: TreeNode) -> List[int]:
                 stack.append((cur.left, False))
         return ans
         
+## Same as above solution, but different way of writting:
+class Solution:
+    # @param {TreeNode} root
+    # @return {integer[]}
+    def postorderTraversal(self, root):
+        traversal, stack = [], [(root, False)]
+        while stack:
+            node, visited = stack.pop()
+            if node:
+                if visited:
+                    # add to result if visited
+                    traversal.append(node.val)
+                else:
+                    # post-order
+                    stack.append((node, True))
+                    stack.append((node.right, False))
+                    stack.append((node.left, False))
+
+        return traversal
+
         
+        
+# Actual code --
+# Solution 2: iteratively, uses modified preorder (right subtree first). Then reverse the result.
+
+class Solution:
+    # @param {TreeNode} root
+    # @return {integer[]}
+    def postorderTraversal(self, root):
+        traversal, stack = [], [root]
+        while stack:
+            node = stack.pop()
+            if node:
+                # pre-order, right first
+                traversal.append(node.val)
+                stack.append(node.left)
+                stack.append(node.right)
+
+        # reverse result
+        return traversal[::-1]
+      
+## Solution 3: Recursively
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        return [] if not root else self.postorderTraversal(root.left) + self.postorderTraversal(root.right) + [root.val]
+
+      
+      

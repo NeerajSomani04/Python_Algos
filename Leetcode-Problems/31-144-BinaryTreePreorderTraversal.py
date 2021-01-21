@@ -20,7 +20,7 @@
 '''
 
 # Actual code --
-# Solution 1:
+# Solution 1: iterative solution
 
 # Definition for a binary tree node.
 # class TreeNode:

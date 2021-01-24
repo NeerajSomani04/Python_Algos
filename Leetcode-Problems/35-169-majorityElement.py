@@ -20,4 +20,24 @@ runtime - 176 ms
 memory - 15.6 MB
 '''
 
-# Solution 2:
+# Solution 2: "Boyer-Moore Voting Algorithm"
+class Solution: 
+    def majorityElement(self, nums: List[int]) -> int:
+        c = v = 0
+        for a in nums:
+            if v == 0:
+                c = a
+            if c == a:
+                v += 1
+            else:
+                v -= 1
+
+        return c
+
+  ''' 
+big-o efficiency
+time complexity - O(n)
+space complexity - O(1)
+runtime - 160 ms
+memory - 15.6 MB
+'''  

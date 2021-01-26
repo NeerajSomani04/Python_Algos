@@ -1,27 +1,28 @@
 # Solution 1:
 
-class Solution {
-    int ans;
-    public int diameterOfBinaryTree(TreeNode root) {
-        if(root == null) return 0;
-        ans = -1;
-        solve(root);
-        return ans;
-    }
-    private int solve(TreeNode root){
-        if(root == null) return 0;
-        int lh = solve(root.left);
-        int rh = solve(root.right);
-        ans = Math.max(ans,lh+rh);
-        return 1+Math.max(lh,rh);
-    }
-}
-
 class Solution:
     ans = 0
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
+        if root is None:
+            return 0
+        self.ans = -1
+        self.solve(root)
+        return self.ans
     
-      
+    def solve(self, root: TreeNode) -> int:
+        if root is None:
+            return 0
+        lh = self.solve(root.left)
+        rh = self.solve(root.right)
+        self.ans = max(self.ans, lh+rh)
+        return 1+max(lh,rh)
+    
+''' Big-O efficiency:
+time complexity - O(n) - go through every node
+space complexity - O(k) - stack frame , that hold at max k function at given time for a left or right subtree of the root node
+'''
+    
+# Solution 2:
 
 class Solution:
     def diameterOfBinaryTree(self, root: TreeNode) -> int:

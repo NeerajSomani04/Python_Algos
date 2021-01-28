@@ -1,8 +1,8 @@
 ## https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/45740/Summary-of-preorder-inorder-postorder-four-traversal-ways-for-each
 
-There are four traversal ways for each included recursive, iterative and morris traversal.
+# There are four traversal ways for each included recursive, iterative and morris traversal.
 
-Recursive Way
+''' ------------- Recursive Way ------------- '''
 
 # preorder
 class Solution(object):
@@ -14,7 +14,7 @@ class Solution(object):
     def inorderTraversal(self, root):
         if not root:
             return []
-        
+
         left, right = map(self.inorderTraversal, (root.left, root.right))
         return left + [root.val] + right
 
@@ -22,7 +22,9 @@ class Solution(object):
 class Solution(object):
     def postorderTraversal(self, root):
         return (sum(map(self.postorderTraversal, (root.left, root.right)), []) + [root.val]) if root else []
-Iterative Way With Stack + Visited State
+
+
+''' ------------- Iterative Way With Stack + Visited State ------------- '''
 
 # preorder
 class Solution(object):
@@ -93,9 +95,10 @@ class Solution(object):
                     stack.append([top[0].right, 0])
 
         return r[::-1]
-Iterative Way With Stack
 
-This way was inspired by Preorder, Inorder, and Postorder Iteratively Summarization
+''' ------------ Iterative Way With Stack ------------- '''
+
+''' ------------ This way was inspired by Preorder, Inorder, and Postorder Iteratively Summarization ------------- '''
 
 # preorder
 class Solution(object):
@@ -137,7 +140,8 @@ class Solution(object):
                 root = stack.pop().left
 
         return r[::-1]
-Morris Traversal Way
+
+''' -------------  Morris Traversal Way ------------- '''
 
 # preorder
 class Solution(object):

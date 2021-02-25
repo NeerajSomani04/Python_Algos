@@ -29,6 +29,9 @@ class Solution:
 # Leetcode statistics
 # memory used - 18.5 MB
 # time taken - 856 ms
+# Big-O efficiency -
+# time complexity - O(n)
+# space complexity - O(1)
 
 # Solution 2 - slightly better way of writting code
 class Solution:

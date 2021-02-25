@@ -29,14 +29,15 @@ class Solution:
                 ht[s[windowEnd]] += 1
             else:
                 ht[s[windowEnd]] = 1
-            while len(ht) >= k:
+            while len(ht) > k:
                 print(ht)
-                result = max(result, sum(ht.values()))
+         
                 if ht[s[windowStart]] == 1:
                     del ht[s[windowStart]]
                 else:
                     ht[s[windowStart]] -= 1
                 windowStart += 1
+            result = max(result, sum(ht.values()))
         if result == -math.inf:
             return 0
         else:

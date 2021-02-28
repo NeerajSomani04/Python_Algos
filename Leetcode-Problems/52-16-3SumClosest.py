@@ -77,8 +77,8 @@ class Solution:
                     lo += 1
                 else:
                     hi -= 1
-            if diff == 0:
-                break
+            if (diff == 0 || nums[i] + nums[i + 1] + nums[i + 2] > target):
+                  break;
         return target - diff
 
 '''

@@ -62,4 +62,37 @@ time complexity - O(n log n) -- considering sort function and for loop idea
 space complexity - O(n) -- as sorting algorithm uses n space and for "result" set variable
 '''
                     
-        
+## Solution : copied from leetcode
+class Solution:
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        diff = float('inf')
+        nums.sort()
+        for i in range(len(nums)):
+            lo, hi = i + 1, len(nums) - 1
+            while (lo < hi):
+                sum = nums[i] + nums[lo] + nums[hi]
+                if abs(target - sum) < abs(diff):
+                    diff = target - sum
+                if sum < target:
+                    lo += 1
+                else:
+                    hi -= 1
+            if diff == 0:
+                break
+        return target - diff
+
+'''
+Complexity Analysis
+
+Time Complexity: \mathcal{O}(n^2)O(n 
+2
+ ). We have outer and inner loops, each going through nn elements.
+
+Sorting the array takes \mathcal{O}(n\log{n})O(nlogn), so overall complexity is \mathcal{O}(n\log{n} + n^2)O(nlogn+n 
+2
+ ). This is asymptotically equivalent to \mathcal{O}(n^2)O(n 
+2
+ ).
+
+Space Complexity: from \mathcal{O}(\log{n})O(logn) to \mathcal{O}(n)O(n), depending on the implementation of the sorting algorithm.
+'''

@@ -59,7 +59,7 @@ class Solution:
 '''
 Big-O efficiency 
 time complexity - O(n log n) -- considering sort function and for loop idea
-space complexity - O(k) -- k will be mostly smaller than n, because of "result" 
+space complexity - O(n) -- as sorting algorithm uses n space and for "result" set variable
 '''
                     
         

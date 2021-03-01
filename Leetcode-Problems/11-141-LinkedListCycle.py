@@ -1,5 +1,5 @@
 ## Reverse a singly linked list.
-
+'''
 # In this we are going to solve leetcode problem #206
 # https://leetcode.com/problems/reverse-linked-list/
 
@@ -18,7 +18,7 @@
           -105 <= Node.val <= 105
           pos is -1 or a valid index in the linked-list.
 
-
+'''
 
 
 

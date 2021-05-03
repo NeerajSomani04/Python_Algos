@@ -83,5 +83,27 @@ Memory Usage: 15.4 MB
 ## Solution 2 on leetcode is much efficient than Solution 1, need to understand, how efficiency can be observed.
 
 
+## Solution 3: DFS using stack (iterative), i need to test this solution
+class Solution(object):
+    def maxDepth(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if not root:
+            return 0
+        stack = []
+        stack.append((root,1))
+        ans = 0
+        while stack:
+            cur_root,depth = stack.pop()
+            if depth > ans:
+                ans = depth
+            if cur_root.right:
+                stack.append((cur_root.right,depth+1))
+            if cur_root.left:
+                stack.append((cur_root.left,depth+1))
+        return ans
+
   
   
